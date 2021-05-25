@@ -1,7 +1,25 @@
-# backend-developer-test
-Proyecto en Laravel como prueba de Backend Developer
+# Descripción
+Proyecto en Laravel como prueba de Backend Developer.
+Aplicando conceptos de Clean Architecture, principios SOLID y pruebas.
 
-![](https://github.com/cesarzabalar/backend-developer-test/workflows/ci-cd-workflow/badge.svg)
+# Endpoints
+1. Auth
+* /api/auth/signup
+* /api/auth/login
+
+2. CashRegister
+* /api/cash/add
+* /api/cash/status
+* /api/cash/empty
+
+3. Log
+* /api/logs/list
+* /api/logs/listByDate/{datetime_format}
+
+4. Payment
+* /api/payment/create
+# Especificaciones
+<a href="/docs/EspecificacionesAPI.pdf" class="image fit">Ver documentación</a>
 
 # Requerimientos
 * Docker  v20.10.6

@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "5b16ece0-4f3c-47f5-b0d2-286ae18fdb4b",
+		"name": "CashRegister",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "signUp",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"cesarzabala\",\n    \"email\": \"cesarzabala@gmail.com.co\",\n    \"password\": \"12345demo\",\n    \"password_confirmation\": \"12345demo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"cesarzabala@gmail.com.co\",\n    \"password\": \"12345demo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cashAdd",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYzFjMTA2OTliNjUwZDM1ZTIxYzA2ZmQwMmM5MTIyOWE2NDEyY2E0MDRhY2E3NDg3NGU3NzljMjU2NDUzNzdmZDkyMDBlMGY3YzE3MzhiZWIiLCJpYXQiOjE2MjE5NjExMjksIm5iZiI6MTYyMTk2MTEyOSwiZXhwIjoxNjUzNDk3MTI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.o1UAt-B85hzuinpatOuh36kkV4gt29Jb1_GID4qw34FlhNI2wWxCmAO4kBIq9yMz8DTz17MVegaGK8WCg_FdCd7s51hJ8QXE7mM9-d4PCFVdn_3tMMRHCAa55QuJtLYDRNdr1aWPOl1PWVjq8mCvm15hCRKgWKHGnscoCrPLVih3tzxmjyVh8DlFNuXygT1Wamj1-7diltHIXl1xnFgs6E_ZUfPavVSP72Baf7FtYqyWhZtjBiDqvRTDXYsFpyL9g_OLZKW6kHRKtTdcqqX0FA0yklzGJiGXVXBgK2GcN1v_Suzgw2PwOzkHruDxzF92P6QYDnr071TTiiIPEeheJUSLOigBPCMfrL3s_BfiBOuv5ctMyloeCsPO-OpuBP0iHtAPs5j8PvS5BvQRJBYM0VJSCSOOvccOgAYcjKdUJlbCaZ2W2BzVyFXSxm0wmrEf7S97lNOYo9bRy5ZxlUJbbjv-NSouRNQG698RION_UblxK8weKV-ym2KNnTNI5iXWMKqL-se5BK3ac8ovhaArwN0httH5R4jdEG-69Fzz3Zd3NqFYydRlE4HRB7e3pNkR5F7h2OLOkPq-sxQ_o4VZa5g6ozGBeNtJmMzS57dX_-bqvTmByknig65jFJ-_LiDXfZeiu02-VgwLcuxsAuxDpmPajeE_47jJ1aICF8KaaOE",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\": \"bills\",\n    \"denomination\": 10000,\n    \"quantity\": 6\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/cash/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cash",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cashStatus",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYzFjMTA2OTliNjUwZDM1ZTIxYzA2ZmQwMmM5MTIyOWE2NDEyY2E0MDRhY2E3NDg3NGU3NzljMjU2NDUzNzdmZDkyMDBlMGY3YzE3MzhiZWIiLCJpYXQiOjE2MjE5NjExMjksIm5iZiI6MTYyMTk2MTEyOSwiZXhwIjoxNjUzNDk3MTI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.o1UAt-B85hzuinpatOuh36kkV4gt29Jb1_GID4qw34FlhNI2wWxCmAO4kBIq9yMz8DTz17MVegaGK8WCg_FdCd7s51hJ8QXE7mM9-d4PCFVdn_3tMMRHCAa55QuJtLYDRNdr1aWPOl1PWVjq8mCvm15hCRKgWKHGnscoCrPLVih3tzxmjyVh8DlFNuXygT1Wamj1-7diltHIXl1xnFgs6E_ZUfPavVSP72Baf7FtYqyWhZtjBiDqvRTDXYsFpyL9g_OLZKW6kHRKtTdcqqX0FA0yklzGJiGXVXBgK2GcN1v_Suzgw2PwOzkHruDxzF92P6QYDnr071TTiiIPEeheJUSLOigBPCMfrL3s_BfiBOuv5ctMyloeCsPO-OpuBP0iHtAPs5j8PvS5BvQRJBYM0VJSCSOOvccOgAYcjKdUJlbCaZ2W2BzVyFXSxm0wmrEf7S97lNOYo9bRy5ZxlUJbbjv-NSouRNQG698RION_UblxK8weKV-ym2KNnTNI5iXWMKqL-se5BK3ac8ovhaArwN0httH5R4jdEG-69Fzz3Zd3NqFYydRlE4HRB7e3pNkR5F7h2OLOkPq-sxQ_o4VZa5g6ozGBeNtJmMzS57dX_-bqvTmByknig65jFJ-_LiDXfZeiu02-VgwLcuxsAuxDpmPajeE_47jJ1aICF8KaaOE"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/cash/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cash",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cashEmpty",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYzFjMTA2OTliNjUwZDM1ZTIxYzA2ZmQwMmM5MTIyOWE2NDEyY2E0MDRhY2E3NDg3NGU3NzljMjU2NDUzNzdmZDkyMDBlMGY3YzE3MzhiZWIiLCJpYXQiOjE2MjE5NjExMjksIm5iZiI6MTYyMTk2MTEyOSwiZXhwIjoxNjUzNDk3MTI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.o1UAt-B85hzuinpatOuh36kkV4gt29Jb1_GID4qw34FlhNI2wWxCmAO4kBIq9yMz8DTz17MVegaGK8WCg_FdCd7s51hJ8QXE7mM9-d4PCFVdn_3tMMRHCAa55QuJtLYDRNdr1aWPOl1PWVjq8mCvm15hCRKgWKHGnscoCrPLVih3tzxmjyVh8DlFNuXygT1Wamj1-7diltHIXl1xnFgs6E_ZUfPavVSP72Baf7FtYqyWhZtjBiDqvRTDXYsFpyL9g_OLZKW6kHRKtTdcqqX0FA0yklzGJiGXVXBgK2GcN1v_Suzgw2PwOzkHruDxzF92P6QYDnr071TTiiIPEeheJUSLOigBPCMfrL3s_BfiBOuv5ctMyloeCsPO-OpuBP0iHtAPs5j8PvS5BvQRJBYM0VJSCSOOvccOgAYcjKdUJlbCaZ2W2BzVyFXSxm0wmrEf7S97lNOYo9bRy5ZxlUJbbjv-NSouRNQG698RION_UblxK8weKV-ym2KNnTNI5iXWMKqL-se5BK3ac8ovhaArwN0httH5R4jdEG-69Fzz3Zd3NqFYydRlE4HRB7e3pNkR5F7h2OLOkPq-sxQ_o4VZa5g6ozGBeNtJmMzS57dX_-bqvTmByknig65jFJ-_LiDXfZeiu02-VgwLcuxsAuxDpmPajeE_47jJ1aICF8KaaOE"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/cash/empty",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"cash",
+						"empty"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logsList",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYzFjMTA2OTliNjUwZDM1ZTIxYzA2ZmQwMmM5MTIyOWE2NDEyY2E0MDRhY2E3NDg3NGU3NzljMjU2NDUzNzdmZDkyMDBlMGY3YzE3MzhiZWIiLCJpYXQiOjE2MjE5NjExMjksIm5iZiI6MTYyMTk2MTEyOSwiZXhwIjoxNjUzNDk3MTI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.o1UAt-B85hzuinpatOuh36kkV4gt29Jb1_GID4qw34FlhNI2wWxCmAO4kBIq9yMz8DTz17MVegaGK8WCg_FdCd7s51hJ8QXE7mM9-d4PCFVdn_3tMMRHCAa55QuJtLYDRNdr1aWPOl1PWVjq8mCvm15hCRKgWKHGnscoCrPLVih3tzxmjyVh8DlFNuXygT1Wamj1-7diltHIXl1xnFgs6E_ZUfPavVSP72Baf7FtYqyWhZtjBiDqvRTDXYsFpyL9g_OLZKW6kHRKtTdcqqX0FA0yklzGJiGXVXBgK2GcN1v_Suzgw2PwOzkHruDxzF92P6QYDnr071TTiiIPEeheJUSLOigBPCMfrL3s_BfiBOuv5ctMyloeCsPO-OpuBP0iHtAPs5j8PvS5BvQRJBYM0VJSCSOOvccOgAYcjKdUJlbCaZ2W2BzVyFXSxm0wmrEf7S97lNOYo9bRy5ZxlUJbbjv-NSouRNQG698RION_UblxK8weKV-ym2KNnTNI5iXWMKqL-se5BK3ac8ovhaArwN0httH5R4jdEG-69Fzz3Zd3NqFYydRlE4HRB7e3pNkR5F7h2OLOkPq-sxQ_o4VZa5g6ozGBeNtJmMzS57dX_-bqvTmByknig65jFJ-_LiDXfZeiu02-VgwLcuxsAuxDpmPajeE_47jJ1aICF8KaaOE"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/logs/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logs",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logsListByDate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYzFjMTA2OTliNjUwZDM1ZTIxYzA2ZmQwMmM5MTIyOWE2NDEyY2E0MDRhY2E3NDg3NGU3NzljMjU2NDUzNzdmZDkyMDBlMGY3YzE3MzhiZWIiLCJpYXQiOjE2MjE5NjExMjksIm5iZiI6MTYyMTk2MTEyOSwiZXhwIjoxNjUzNDk3MTI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.o1UAt-B85hzuinpatOuh36kkV4gt29Jb1_GID4qw34FlhNI2wWxCmAO4kBIq9yMz8DTz17MVegaGK8WCg_FdCd7s51hJ8QXE7mM9-d4PCFVdn_3tMMRHCAa55QuJtLYDRNdr1aWPOl1PWVjq8mCvm15hCRKgWKHGnscoCrPLVih3tzxmjyVh8DlFNuXygT1Wamj1-7diltHIXl1xnFgs6E_ZUfPavVSP72Baf7FtYqyWhZtjBiDqvRTDXYsFpyL9g_OLZKW6kHRKtTdcqqX0FA0yklzGJiGXVXBgK2GcN1v_Suzgw2PwOzkHruDxzF92P6QYDnr071TTiiIPEeheJUSLOigBPCMfrL3s_BfiBOuv5ctMyloeCsPO-OpuBP0iHtAPs5j8PvS5BvQRJBYM0VJSCSOOvccOgAYcjKdUJlbCaZ2W2BzVyFXSxm0wmrEf7S97lNOYo9bRy5ZxlUJbbjv-NSouRNQG698RION_UblxK8weKV-ym2KNnTNI5iXWMKqL-se5BK3ac8ovhaArwN0httH5R4jdEG-69Fzz3Zd3NqFYydRlE4HRB7e3pNkR5F7h2OLOkPq-sxQ_o4VZa5g6ozGBeNtJmMzS57dX_-bqvTmByknig65jFJ-_LiDXfZeiu02-VgwLcuxsAuxDpmPajeE_47jJ1aICF8KaaOE"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/logs/listByDate/2021-01-24 01:00:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logs",
+						"listByDate",
+						"2021-01-24 01:00:00"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "paymentCreate",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYzFjMTA2OTliNjUwZDM1ZTIxYzA2ZmQwMmM5MTIyOWE2NDEyY2E0MDRhY2E3NDg3NGU3NzljMjU2NDUzNzdmZDkyMDBlMGY3YzE3MzhiZWIiLCJpYXQiOjE2MjE5NjExMjksIm5iZiI6MTYyMTk2MTEyOSwiZXhwIjoxNjUzNDk3MTI5LCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.o1UAt-B85hzuinpatOuh36kkV4gt29Jb1_GID4qw34FlhNI2wWxCmAO4kBIq9yMz8DTz17MVegaGK8WCg_FdCd7s51hJ8QXE7mM9-d4PCFVdn_3tMMRHCAa55QuJtLYDRNdr1aWPOl1PWVjq8mCvm15hCRKgWKHGnscoCrPLVih3tzxmjyVh8DlFNuXygT1Wamj1-7diltHIXl1xnFgs6E_ZUfPavVSP72Baf7FtYqyWhZtjBiDqvRTDXYsFpyL9g_OLZKW6kHRKtTdcqqX0FA0yklzGJiGXVXBgK2GcN1v_Suzgw2PwOzkHruDxzF92P6QYDnr071TTiiIPEeheJUSLOigBPCMfrL3s_BfiBOuv5ctMyloeCsPO-OpuBP0iHtAPs5j8PvS5BvQRJBYM0VJSCSOOvccOgAYcjKdUJlbCaZ2W2BzVyFXSxm0wmrEf7S97lNOYo9bRy5ZxlUJbbjv-NSouRNQG698RION_UblxK8weKV-ym2KNnTNI5iXWMKqL-se5BK3ac8ovhaArwN0httH5R4jdEG-69Fzz3Zd3NqFYydRlE4HRB7e3pNkR5F7h2OLOkPq-sxQ_o4VZa5g6ozGBeNtJmMzS57dX_-bqvTmByknig65jFJ-_LiDXfZeiu02-VgwLcuxsAuxDpmPajeE_47jJ1aICF8KaaOE"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"total_product\": 5000,\n    \"total_cash\": 20000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/payment/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"payment",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
